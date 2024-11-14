@@ -7,6 +7,7 @@ export const getBasicCourseInfo = async () => {
 
 // Service function to get course details by ID with specific fields
 export const getCourseDetailsById = async (courseId: string, fields?: string) => {
+  
   let selectFields = "title"; // Include title by default
   if (fields) {
     selectFields += " " + fields.split(",").join(" ");

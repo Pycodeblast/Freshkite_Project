@@ -14,7 +14,7 @@ export const getCourses = async (req: Request, res: Response) => {
 /// Controller function to get full course details by ID with dynamic field selection
 export const getCourseById = async (req: Request, res: Response) => {
   try {
-    const requestedFields = req.query.fields as string;
+    const requestedFields = req.query.fields as string; 
     const course = await courseService.getCourseDetailsById(req.params.id, requestedFields);
     if (!course) return res.status(404).json({ message: "Course not found" });
     res.status(200).json(course);
